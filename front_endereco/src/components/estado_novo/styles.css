@@ -1,0 +1,97 @@
+.novo-estado-container {
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.novo-estado-container .content {
+  width: 100%;
+  padding: 64px;
+  background: #f0f0f5;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.novo-estado-container .content section {
+  width: 100%;
+  max-width: 380px;
+}
+
+.novo-estado-container section.form {
+  width: 100%;
+  max-width: 350px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.novo-estado-container section.form img {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.novo-estado-container .content section h1 {
+  margin: 32px 0 24px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.novo-estado-container .content form {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.novo-estado-container .content form input,
+.novo-estado-container .content form select {
+  margin-top: 10px;
+  padding: 12px 16px;
+  height: 48px;
+  font-size: 16px;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+}
+
+.novo-estado-container .content form .button {
+  margin-top: 20px;
+  height: 48px;
+  background: #007bff;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.novo-estado-container .content form .button:hover {
+  background: #0056b3;
+}
+
+.novo-estado-container .back-link {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.novo-estado-container .back-link:hover {
+  color: #007bff;
+}
