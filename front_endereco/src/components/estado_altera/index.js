@@ -1,24 +1,27 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { FiCornerDownLeft, FiFileText } from "react-icons/fi";
 import { Link, useParams } from "react-router";
-import api from "../../services/api";
+import api from "../../service/api";
 
 export default function AlterarEstado(){
 
     const {sigla} = useParams();
     const [nome,setNome] = useState('');
+    const [pais,setPais] = useState('');
     const [load,setLoad] = useState(false);
 
     const loadEstado = useCallback(async () => {
         try{
             await api.get('Estado/'+sigla)
                      .then(
-                        response => setNome(response.data.nome)
+                        response => setNome(response.data.nome),
+                        response => setPais(response.data.pais)
+                        
                      )
         }catch(error){
             alert("Erro ao carregar estado " + error);
         }
-    },[sigla, setNome]);
+    },[sigla, setNome, setPais]);
 
     useEffect(() => {
         if(!load){
@@ -30,7 +33,8 @@ export default function AlterarEstado(){
     async function putEstado(event){
         const data = {
             sigla,
-            nome
+            nome,
+            pais
         }
         try{
             await api.put('Estado',data).then(alert("Estado alterado"));
@@ -55,6 +59,9 @@ export default function AlterarEstado(){
                     <input placeholder="Nome" 
                            value={nome} 
                            onChange={e => setNome(e.target.value)} />
+                    <input placeholder="Pais"
+                           value={pais} 
+                           onChange={e => setPais(e.target.value)} />
                     <button className="button" type="submit">Salvar</button>
 
                 </form>

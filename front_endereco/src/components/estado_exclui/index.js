@@ -1,7 +1,7 @@
 import React from "react";
 import { FiCornerDownLeft, FiFileMinus } from "react-icons/fi";
-import { Link, useParams } from "react-router";
-import api from "../../services/api";
+import { Link, useParams } from "react-router-dom";
+import api from "../../service/api";
 
 export default function ExcluirEstado(){
 

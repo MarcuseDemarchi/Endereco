@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './styles.css';
 import { FiCornerDownLeft, FiFilePlus } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../service/api.js";
 
 export default function NovoEstado() {
@@ -9,6 +9,7 @@ export default function NovoEstado() {
     const [nome, setNome] = useState('');
     const [paisCodigo, setPaisCodigo] = useState('');
     const [listaPaises, setListaPaises] = useState([]);
+    const navigate = useNavigate(); // ← aqui!
 
     useEffect(() => {
         api.get('Pais')
@@ -17,7 +18,7 @@ export default function NovoEstado() {
     }, []);
 
     async function postEstado(event) {
-        event.preventDefault(); // ← importante!
+        event.preventDefault();
         const data = {
             sigla,
             nome,
@@ -26,6 +27,7 @@ export default function NovoEstado() {
         try {
             await api.post('Estado', data);
             alert("Estado cadastrado com sucesso");
+            navigate("/estado"); // ← redireciona!
         } catch (error) {
             alert("Erro ao salvar estado: " + error.response?.data || error.message);
         }
