@@ -1,73 +1,71 @@
 import React, { useEffect, useState } from "react";
-import './styles.css';
+import { Link } from "react-router-dom";
+import { LuPencilLine, LuTrash2 } from "react-icons/lu"; // Ícones modernos
 import api from "../../service/api";
-import { Link } from 'react-router-dom';
-import { FiEdit, FiTrash } from "react-icons/fi";
-import { Table } from "reactstrap";
+import './styles.css';
 
-export default function Estado() {
-    const [lista, setLista] = useState([]);
+export default function EstadoList() {
+  const [estados, setEstados] = useState([]);
 
-    useEffect(() => {
-        api.get('estado').then(response => {
-            setLista(response.data);
-        });
-    }, []);
+  useEffect(() => {
+    api.get("Estado")
+      .then(response => setEstados(response.data))
+      .catch(error => alert("Erro ao carregar estados: " + error));
+  }, []);
 
-    async function deleteEstado(sigla) {
-    if (window.confirm(`Tem certeza que deseja excluir o estado ${sigla}?`)) {
-        try {
-            await api.delete(`estado/${sigla}`);
-            alert("Estado excluído com sucesso!");
-
-            // Atualiza a lista local sem o item removido
-            setLista(lista.filter(estado => estado.sigla !== sigla));
-
-        } catch (error) {
-            alert("Erro ao excluir estado: " + error);
-        }
+  async function excluir(sigla) {
+    if (window.confirm(`Deseja realmente excluir o estado ${sigla}?`)) {
+      try {
+        await api.delete(`Estado/${sigla}`);
+        setEstados(estados.filter(estado => estado.sigla !== sigla));
+        alert("Estado excluído com sucesso!");
+      } catch (error) {
+        alert("Erro ao excluir estado: " + error);
+      }
     }
-}
+  }
 
+  return (
+    <div className="estado-container">
+      <header>
+        <span><strong>Lista de Estados</strong></span>
 
-    return (
-        <div>
-            <h1>Lista de Estados</h1>
-            <Link className="button" to="/novo/estado">Novo Estado</Link>
-            <Table className="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Sigla</th>
-                        <th>Nome</th>
-                        <th>País</th>
-                        <th className="thOpcoes">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        lista.map(item => {
-                            return (
-                                <tr key={item.sigla}>
-                                    <td>{item.sigla}</td>
-                                    <td>{item.nome}</td>
-                                    <td>{item.pais?.nome}</td>
-                                    <td className="tdOpcoes">
-                                        <Link to={`/estado/alterar/${item.sigla}`}>
-                                            <button type="button">
-                                                <FiEdit size={25} color="#17202a" />
-                                            </button>
-                                        </Link>
-                                        {" "}
-                                        <button type="button" onClick={() => deleteEstado(item.sigla)}>
-                                            <FiTrash size={25} color="#17202a" />
-                                        </button>
-                                    </td>
-                                </tr>
-                            );
-                        })
-                    }
-                </tbody>
-            </Table>
+        <div style={{ display: "flex", gap: "10px" }}>
+            <Link className="button" to="/">Voltar à Página Inicial</Link>
+            <Link className="button" to="/estado/novo">Cadastrar Novo</Link>
         </div>
-    );
+      </header>
+
+
+      <table>
+        <thead>
+          <tr>
+            <th>Sigla</th>
+            <th>Nome</th>
+            <th>País</th>
+            <th className="thOpcoes">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {estados.map((estado) => (
+            <tr key={estado.sigla}>
+              <td>{estado.sigla}</td>
+              <td>{estado.nome}</td>
+              <td>{estado.pais?.nome}</td>
+              <td className="tdOpcoes">
+                <Link to={`/estado/alterar/${estado.sigla}`} title="Editar">
+                  <button className="icon-button editar">
+                    <LuPencilLine />
+                  </button>
+                </Link>
+                <button className="icon-button excluir" title="Excluir" onClick={() => excluir(estado.sigla)}>
+                  <LuTrash2 />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }

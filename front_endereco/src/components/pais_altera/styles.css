@@ -1,3 +1,4 @@
+/* Use as mesmas classes do estado */
 .novo-estado-container {
   width: 100%;
   max-width: 1120px;
@@ -59,8 +60,7 @@
   flex-direction: column;
 }
 
-.novo-estado-container .content form input,
-.novo-estado-container .content form select {
+.novo-estado-container .content form input {
   margin-top: 12px;
   padding: 14px 16px;
   height: 50px;
@@ -69,11 +69,9 @@
   border-radius: 10px;
   background: #fff;
   color: #333;
-  transition: border-color 0.3s ease;
 }
 
-.novo-estado-container .content form input:focus,
-.novo-estado-container .content form select:focus {
+.novo-estado-container .content form input:focus {
   border-color: #007bff;
   outline: none;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
@@ -90,7 +88,6 @@
   font-size: 18px;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-  transition: background 0.3s ease;
 }
 
 .novo-estado-container .content form .button:hover {

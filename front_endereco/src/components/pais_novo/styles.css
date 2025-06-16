@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.novo-pais-container {
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.novo-pais-container .content {
+  width: 100%;
+  padding: 64px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.novo-pais-container .content:hover {
+  box-shadow: 0 12px 40px rgba(0, 123, 255, 0.2);
+}
+
+.novo-pais-container .content section {
+  width: 100%;
+  max-width: 380px;
+  color: #222222;
+}
+
+.novo-pais-container section.form {
+  width: 100%;
+  max-width: 350px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.novo-pais-container section.form img {
+  width: 45%;
+  margin: 0 auto;
+  display: block;
+}
+
+.novo-pais-container .content section h1 {
+  margin: 32px 0 24px;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  color: #007bff;
+}
+
+.novo-pais-container .content form {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.novo-pais-container .content form input {
+  margin-top: 14px;
+  padding: 14px 18px;
+  height: 50px;
+  font-size: 16px;
+  border: 1.5px solid #cfd8dc;
+  border-radius: 10px;
+  background: #fefefe;
+  color: #212121;
+}
+
+.novo-pais-container .content form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.novo-pais-container .content form .button {
+  margin-top: 26px;
+  height: 52px;
+  background: #007bff;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.novo-pais-container .content form .button:hover {
+  background: #0056b3;
+  box-shadow: 0 6px 20px rgba(0, 86, 179, 0.5);
+}
+
+.novo-pais-container .back-link {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.novo-pais-container .back-link:hover {
+  color: #0056b3;
+}
+
+.novo-pais-container {
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.novo-pais-container .content {
+  width: 100%;
+  padding: 64px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: box-shadow 0.3s ease;
+}
+
+.novo-pais-container .content:hover {
+  box-shadow: 0 12px 40px rgba(0, 123, 255, 0.2);
+}
+
+.novo-pais-container .content section {
+  width: 100%;
+  max-width: 380px;
+  color: #222222;
+}
+
+.novo-pais-container section.form {
+  width: 100%;
+  max-width: 350px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.novo-pais-container .content section h1 {
+  margin: 32px 0 24px;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  color: #007bff;
+}
+
+.novo-pais-container .content form {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.novo-pais-container .content form input {
+  margin-top: 14px;
+  padding: 14px 18px;
+  height: 50px;
+  font-size: 16px;
+  border: 1.5px solid #cfd8dc;
+  border-radius: 10px;
+  background: #fefefe;
+  color: #212121;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.novo-pais-container .content form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.novo-pais-container .content form .button {
+  margin-top: 26px;
+  height: 52px;
+  background: #007bff;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.novo-pais-container .content form .button:hover {
+  background: #0056b3;
+  box-shadow: 0 6px 20px rgba(0, 86, 179, 0.5);
+}
+
+.novo-pais-container .back-link {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 16px;
+}
+
+.novo-pais-container .back-link:hover {
+  color: #0056b3;
+}

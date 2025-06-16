@@ -5,25 +5,25 @@ body {
   padding: 0;
 }
 
-.estado-container {
+.pais-container {
   width: 100%;
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 30px;
 }
 
-.estado-container header {
+.pais-container header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
 }
 
-.estado-container header img {
+.pais-container header img {
   height: 60px;
 }
 
-.estado-container header span {
+.pais-container header span {
   font-size: 22px;
   font-weight: bold;
   color: #333;
@@ -31,7 +31,7 @@ body {
   flex-grow: 1;
 }
 
-.estado-container header .button {
+.pais-container header .button {
   background: #4f46e5;
   color: white;
   padding: 12px 20px;
@@ -41,11 +41,10 @@ body {
   transition: background 0.3s;
 }
 
-.estado-container header .button:hover {
+.pais-container header .button:hover {
   background: #4338ca;
 }
 
-/* Tabela */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -75,7 +74,6 @@ tr:nth-child(even) {
   background: #fafafa;
 }
 
-/* Botões de ação */
 .icon-button {
   background: transparent;
   border: none;
@@ -84,10 +82,10 @@ tr:nth-child(even) {
   padding: 6px;
   border-radius: 6px;
   color: #555;
-  transition: background 0.2s, color 0.2s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s, color 0.2s;
 }
 
 .icon-button svg {
@@ -105,20 +103,19 @@ tr:nth-child(even) {
   color: #ef4444;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   th, td {
     font-size: 14px;
     padding: 12px;
   }
 
-  .estado-container header {
+  .pais-container header {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
 
-  .estado-container header .button {
+  .pais-container header .button {
     width: 100%;
   }
 }

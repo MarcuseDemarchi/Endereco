@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './styles.css';
-import { FiCornerDownLeft, FiFilePlus } from "react-icons/fi";
+import { LuArrowLeft, LuFilePlus } from "react-icons/lu";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../service/api.js";
 
@@ -9,7 +9,7 @@ export default function NovoEstado() {
     const [nome, setNome] = useState('');
     const [paisCodigo, setPaisCodigo] = useState('');
     const [listaPaises, setListaPaises] = useState([]);
-    const navigate = useNavigate(); // ← aqui!
+    const navigate = useNavigate();
 
     useEffect(() => {
         api.get('Pais')
@@ -27,7 +27,7 @@ export default function NovoEstado() {
         try {
             await api.post('Estado', data);
             alert("Estado cadastrado com sucesso");
-            navigate("/estado"); // ← redireciona!
+            navigate("/estado");
         } catch (error) {
             alert("Erro ao salvar estado: " + error.response?.data || error.message);
         }
@@ -37,10 +37,11 @@ export default function NovoEstado() {
         <div className="novo-estado-container">
             <div className="content">
                 <section className="form">
-                    <FiFilePlus size={105} color="#17202a" />
+                    <LuFilePlus size={60} color="#007bff" />
                     <h1>Novo Estado</h1>
                     <Link className="back-link" to="/estado">
-                        <FiCornerDownLeft size={105} color="#17202a" />
+                        <LuArrowLeft size={36} color="#007bff" />
+                        <span style={{ marginLeft: '8px' }}>Voltar</span>
                     </Link>
                 </section>
                 <form onSubmit={postEstado}>
